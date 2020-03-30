@@ -91,7 +91,8 @@ module.exports = (config) => {
 
         for (const zone of zones) {
             const partitionId = zone.part - 1
-            const nodeId = zone.zoneName.replace(' ', '-')
+            const nodeId = zone.zoneName.split(' ').join('-')
+            console.log(`published ${nodeId} ${zone.zoneName} for homeassistant autodiscovery`)
             const payload = {
                 'name': `${zone.zoneName}`,
                 'payload_on': 'triggered',
