@@ -89,6 +89,7 @@ module.exports = (config) => {
             console.log(`published alarm_control_panel for homeassistant autodiscovery on partition ${partition.id}`)
         }
 
+        console.log(`publishing zones for homeassistant autodiscovery`)
         for (const zone of zones) {
             const partitionId = zone.part - 1
             const nodeId = zone.zoneName.split(' ').join('-')
